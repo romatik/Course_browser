@@ -2,15 +2,15 @@
 # function calculates the mean only if there are 10 or more respondents to each individual question
 f1 <- function(x) if(sum(!is.na(x))>9) mean(as.numeric(x), na.rm=TRUE) else NA_real_
 
-questionprint <- function(x, dataset = overall, save = TRUE){
-  ### function for printing out the likert plot about each individual section of a survey. It also prints out information about 
-  ### Cronbach's alpha level. Can be used further to create similar plots for each individual course.
+#function calculates number of respondents (not NA)
+f2 <- function(x) sum(!is.na(x))
+
+questionprint <- function(x, dataset = overall){
+  ### function for printing out the likert plot about each individual section of a survey.
   
   ### x = name of the question to be printed
   ### dataset = which dataset should be used to extract data from. Default = overall.
-  ### save = flag to indicate whether to save or print the plot. Default is TRUE (plot will be saved in the current directory in sub-folder 
-  ### "Question_statistics")
-  
+
   z <- question_prepare(x, dataset)
   question <- z[[1]]
   name_of_the_question <- z[[2]]
@@ -27,11 +27,7 @@ questionprint <- function(x, dataset = overall, save = TRUE){
       name_of_the_question <- wrap_function(name_of_the_question)
       
       p <- plot_question(question, name_of_the_question)
-      if(save){
-        ggsave(filename = sprintf("./Question_statistics/%s.png", x), plot = p, units = "mm", width = 180, height = (25 + dim(question)[2]*8)) #making graph a little rubbery
-      } else {
-        return(p)
-      }
+      return(p)
     }
   }
 }
@@ -132,15 +128,21 @@ comparative_df <- function(x, course_dataset, dataset){
   ### x = name of the question.
   overall_dataset <- question_prepare(x, dataset)[[1]]
   question_dataset <- question_prepare(x, course_dataset)[[1]]
+  
+  
+  # checking to see if there is any data for that question
+  if(dim(question_dataset)[2] == 0)
+    return (as.data.frame("There is no data for that question"))
 
   #calculating means for a specific course
   means_question <- question_dataset %>% 
-    summarise_each(funs(f1, n())) %>%
+    summarise_each(funs(f1, f2)) %>%
     gather(variable, value) %>%
-    separate(variable, c("var", "stat"), sep = "\\_") %>%
+    separate(variable, c("var", "stat"), sep = "\\_f") %>%
     spread(var, value)%>%
     t() %>%
     as.data.frame()
+  
 
   #cleaning the means_question dataset to use it in a table
   names(means_question) <- c("Mean", "Respondents")
@@ -603,7 +605,7 @@ figure_height <- function(question, course_dataset){
        return (50+50*nrow(means_question))
     } 
   }
-  else return (1) #return 0 height in case there is nothing to print
+  else return (1) #return 1 height in case there is nothing to print
 }
   
 plot_question <- function(question, name_of_the_question){
@@ -618,7 +620,6 @@ plot_question <- function(question, name_of_the_question){
             plot.percent.low = FALSE,  # displaying cummulative percents for negative answers
             plot.percent.high = FALSE, # displaying cummulative percents for positive answers
             centered = FALSE, # stretcthing the bar from left to right
-            #text.size = ,
             wrap = 40, # wrap statement for dimension names
             legend.position = "top",
             group.order = sort(names(question))) + 
