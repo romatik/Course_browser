@@ -12,7 +12,7 @@ library(stringr)
 library(shiny)
 
 source("functions.R")
-dataset <- read.csv("./data/bigtable.csv", na.strings = c("", " ", "No answer", "N/A", "NA"), header = TRUE)
+dataset <- read.csv("./data/course_browser_anonymized.csv", na.strings = c("", " ", "No answer", "N/A", "NA"), header = TRUE)
 dataset$X <- NULL
 dataset$B.2.2.a.If.you.feel.comfortable.describe.any.inappropriate.conduct.or.sexual.harassment.issues.you.have.witnessed.or.have.been.the.subject.of.and.the.support.you.have.received.The.answers.to.this.question.will.not.be.shared.with.Erasmus.Mundus.course._Open.Ended.Response <- NULL
 dataset$L.2.a.Rate.the.following.statements.about.internship._Overall.quality.of.the.internship_2 <- NULL
@@ -37,36 +37,66 @@ tenormore <- dataset %>%
   filter(respondents >= 10)
 colnames(tenormore) <- c("Course", "Respondents")
 
-shinyUI(fluidPage(
-
-  # Application title
-  titlePanel("Course Browser"),
-
-  # Sidebar with a slider input for number of bins
-  sidebarLayout(
-    sidebarPanel(
-      selectInput("course", "Course:", 
-                  choices=unique(as.character(tenormore$Course))),
-      hr(),
-      checkboxGroupInput("checkGroup", label = h3("Questions"), 
-                         c("Question 1: Info and support before the start" = "B.1.1",
-                           "Question 2: Introduction process" = "B.1.3",
-                           "Question 3: Helpfulness of units/people" = "B.2.1",
-                           "Question 4: Support on issues" = "B.2.2",
-                           "Question 5: Feedback mechanisms" = "C.1",
-                           "Question 6: First supervisor" = "L.4",
-                           "Question 7: Second supervisor" = "L.5",
-                           "Question 8: Personal development" = "L.6",
-                           "Question 9: Field experience" = "L.3.a",
-                           "Question 10: Internship experience" = "L.2.a"),
-                         selected = questions[1]),
-      actionButton("go", "Submit")
-    ),
-    
-    mainPanel(h2(textOutput("course_name"), align = "center"),
+shinyUI(navbarPage("Course Browser",
+  tabPanel("Introduction",
+           fluidRow(
+             column(1),
+             column(10, 
+                    includeMarkdown("introduction.Rmd"),
+                    br(),
+                    dataTableOutput("example"),
+                    br(),
+                    includeMarkdown("introduction_after_table.Rmd")
+                    ),
+             column(1)
+           )
+  ),
+  
+  tabPanel("Individual programs",
+           sidebarLayout(
+             
+            sidebarPanel(
+              selectInput("course", "Course:", 
+                          choices=unique(as.character(tenormore$Course))),
               hr(),
-              uiOutput("course_plots"),
-              h6(textOutput("created_by"))
-    )
+              checkboxGroupInput("checkGroup", label = h3("Questions"), 
+                                 c("Question 1: Info and support before the start" = "B.1.1",
+                                   "Question 2: Introduction process" = "B.1.3",
+                                   "Question 3: Helpfulness of units/people" = "B.2.1",
+                                   "Question 4: Support on issues" = "B.2.2",
+                                   "Question 5: Feedback mechanisms" = "C.1",
+                                   "Question 6: First supervisor" = "L.4",
+                                   "Question 7: Second supervisor" = "L.5",
+                                   "Question 8: Personal development" = "L.6",
+                                   "Question 9: Field experience" = "L.3.a",
+                                   "Question 10: Internship experience" = "L.2.a"),
+                                 selected = questions[1]),
+              actionButton("go", "Submit")
+            ),
+    
+              mainPanel(h2(textOutput("course_name"), align = "center"),
+                        hr(),
+                        uiOutput("course_plots"),
+                        h6(textOutput("created_by"))
+              )
+           )
+  ),
+
+  tabPanel("Acknowledgments",
+           fluidRow(
+             column(1),
+             column(10, 
+                    includeMarkdown("acknowledgments.Rmd")),
+             column(1)
+           )
+  ),
+  
+  tabPanel("About CQAB and CQSS",
+           fluidRow(
+             column(1),
+             column(10, 
+                    includeMarkdown("about.Rmd")),
+             column(1)
+           )
   )
 ))

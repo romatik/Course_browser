@@ -132,7 +132,7 @@ comparative_df <- function(x, course_dataset, dataset){
   
   # checking to see if there is any data for that question
   if(dim(question_dataset)[2] == 0)
-    return (as.data.frame("There is no data for that question"))
+    return (as.data.frame("There are no data for that question"))
 
   #calculating means for a specific course
   means_question <- question_dataset %>% 
@@ -633,6 +633,6 @@ plot_question <- function(question, name_of_the_question){
           plot.title = element_text(size = 14)) + #size of the text in the title
     geom_hline(yintercept=seq(25, 75, by=25), linetype = "dashed", size = 0.2) + # adding dashed lines at 25, 50, 75% to make it more clear
     coord_fixed() +
-    coord_flip(ylim = c(-1,101)) #reducing white space left to 0 and right to 100
+    coord_flip(ylim = c(4,96)) #reducing white space left to 0 and right to 100
   return(p)
 }

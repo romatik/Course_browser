@@ -51,3 +51,4 @@ data/bigtable.csv
 *.csv
 rsconnect/shinyapps.io/erasmusmundusassociation/Course_browser.dcf
 *.dcf
+.Rproj.user

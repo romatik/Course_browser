@@ -1,0 +1,21 @@
+---
+title: "Untitled"
+author: "Mikhail Balyasin"
+date: "March 8, 2016"
+output: html_document
+---
+
+Each row represents a distinct indicator evaluated as part of the CQSS survey. Each table includes all indicators which received 10 or more responses and compose a dimension. Tables include 
+
+  * The number of responses received for each indicator (n); 
+  * The mean for each indicator corresponding to focus course of the report (Mean);
+  * The aggregated mean for the respective indicator across all EMJMD courses (EM mean). 
+
+Additionally, the table provides information about the distribution of means across all EMJMD courses with 10 or more responses. The distribution of means is displayed as ranges of means in quartile increments. As such, 25% of all EMJMD courses with 10 or more responses will be found in each of the four columns. This display facilitates an easy comparison between a given programme and its peers. The means displayed in the comparison tables are obtained by converting Likert-scale survey responses to numeric values: 
+
+  * "Very unsatisfied" or "Disagree" = 1;
+  * "Unsatisfied" or "Somewhat disagree" = 2;
+  * "Satisfied" or "Somewhat agree" = 3;
+  * "Very satisfied" or "Agree" = 4.
+
+Therefore, the average score for any given indicator in a table ranges from a minimum of 1 to a maximum of 4, where 4 represents a perfect score for an indicator.

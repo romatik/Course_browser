@@ -1,7 +1,7 @@
 library(ggvis)
 
 source("functions.R")
-dataset <- read.csv("./data/bigtable.csv", na.strings = c("", " ", "No answer", "N/A", "NA"), header = TRUE)
+dataset <- read.csv("./data/course_browser_anonymized.csv", na.strings = c("", " ", "No answer", "N/A", "NA"), header = TRUE)
 dataset$X <- NULL
 dataset$B.2.2.a.If.you.feel.comfortable.describe.any.inappropriate.conduct.or.sexual.harassment.issues.you.have.witnessed.or.have.been.the.subject.of.and.the.support.you.have.received.The.answers.to.this.question.will.not.be.shared.with.Erasmus.Mundus.course._Open.Ended.Response <- NULL
 
