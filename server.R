@@ -28,17 +28,11 @@ shinyServer(function(input, output) {
     paste(input$course)
   })
   
-  createdInput <- eventReactive(input$go, {
-    paste("Created by Mikhail Balyasin, head of Quantitative team of CQAB of Erasmus Mundus Students and Alumni Association")
-  })
-  
   ### output values to be sent to user after the button "Submit" was pressed
   output$course_name <- renderText({courseInput()})
   
-  output$created_by <- renderText({createdInput()})
-  
-  output$example <- renderDataTable(z, options = list(dom = 't', autoWidth = TRUE,
-                                    columnDefs = list(list(width = "190px", targets = c(0)))))
+  output$example <- renderDataTable(z, options = list(dom = 't', autoWidth = TRUE, searching = FALSE,
+                                                      columnDefs = list(list(width = "190px", targets = c(0)))))
   
   output$course_plots <- renderUI({
     plot_output_list <- 
@@ -83,7 +77,7 @@ shinyServer(function(input, output) {
         
         output[[paste0("tablename", local_i)]] <-
           renderDataTable(comparative_df(local_i, datasetInput(), dataset), 
-                          options = list(dom = 't', autoWidth = TRUE,
+                          options = list(dom = 't', autoWidth = TRUE, searching = FALSE,
                                          columnDefs = list(list(width = "190px", targets = c(0)))))
       })
     }

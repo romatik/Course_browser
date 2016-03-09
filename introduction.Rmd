@@ -7,11 +7,11 @@ output: html_document
 
 ### Introduction
 
-<img src="data/EMA_small.png" width="178px" height="95px" align="right" /> The present report was compiled by the Course Quality Advisory Board (CQAB) of the Erasmus Mundus Student and Alumni Association (EMA) with the main purpose of providing Erasmus Mundus Joint Master Degree (EMJMD) courses with customized student feedback that emerged from the 2015 edition of the Course Quality Student Services (CQSS) survey. This feedback can aid courses in their quest of **improving student services**, and **benchmark** against other course in the Erasmus Mundus umbrella. 
+<img src="data/EMA_small.png" width="20%" align="right" /> The present report was compiled by the Course Quality Advisory Board (CQAB) of the Erasmus Mundus Student and Alumni Association (EMA) with the main purpose of providing access to all stakeholders to data that emerged from the 2015 edition of the Course Quality Student Services (CQSS) survey. 
 
-CQAB is eager to receive further feedback from each course coordinator and other stakeholders on how future CQSS reports and their contents may be improved in order to maximize their usefulness. We understand that courses themselves are best suited to address quality concerns, and we strongly suggest that the information in report, with its limitations, is triangulated with internally available data at the level of each course. 
+CQAB is eager to receive further feedback from stakeholders on how future CQSS reports and their contents may be improved in order to maximize their usefulness. We understand that courses themselves are best suited to address quality concerns, and we strongly suggest that present information, with its limitations, is triangulated with other available data for each course. 
 
-### How to use
+### Individual programs
 
 Interactive tool (tab **"Individual programs"**) provides information about EMJMD programs that received 10 or more answers in CQSS survey.
 
@@ -19,7 +19,7 @@ It introduces two distinct sources of information. **First**, responses are intr
 
 <br>
 <div style="text-align:center" markdown="1">
-<img src="data/example.png" width="800px" align="center" /> 
+<img src="data/example.png" width="80%" align="center" /> 
 </div>
 <br>
 

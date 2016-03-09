@@ -37,7 +37,9 @@ tenormore <- dataset %>%
   filter(respondents >= 10)
 colnames(tenormore) <- c("Course", "Respondents")
 
-shinyUI(navbarPage("Course Browser",
+shinyUI(
+  navbarPage("Course Browser", 
+             footer = h6("Created by Mikhail Balyasin, head of Quantitative team of CQAB of Erasmus Mundus Students and Alumni Association", align = "center"),
   tabPanel("Introduction",
            fluidRow(
              column(1),
@@ -69,15 +71,13 @@ shinyUI(navbarPage("Course Browser",
                                    "Question 7: Second supervisor" = "L.5",
                                    "Question 8: Personal development" = "L.6",
                                    "Question 9: Field experience" = "L.3.a",
-                                   "Question 10: Internship experience" = "L.2.a"),
-                                 selected = questions[1]),
+                                   "Question 10: Internship experience" = "L.2.a")),
               actionButton("go", "Submit")
             ),
     
               mainPanel(h2(textOutput("course_name"), align = "center"),
                         hr(),
-                        uiOutput("course_plots"),
-                        h6(textOutput("created_by"))
+                        uiOutput("course_plots")
               )
            )
   ),
