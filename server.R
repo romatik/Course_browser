@@ -49,7 +49,7 @@ shinyServer(function(input, output) {
   })
   
   
-  observe({
+  observeEvent(input$go, {
     for (i in input$checkGroup) {
       local({
         local_i <- i

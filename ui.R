@@ -39,7 +39,9 @@ colnames(tenormore) <- c("Course", "Respondents")
 
 shinyUI(
   navbarPage("Course Browser", 
-             footer = h6("Created by Mikhail Balyasin, head of Quantitative team of CQAB of Erasmus Mundus Students and Alumni Association", align = "center"),
+             footer = h6("Created by Mikhail Balyasin, head of Quantitative team of CQAB of EMA |", a(" github", href = "https://github.com/romatik/Course_browser"), align = "center"),
+             
+             
   tabPanel("Introduction",
            fluidRow(
              column(1),
@@ -91,12 +93,30 @@ shinyUI(
            )
   ),
   
-  tabPanel("About CQAB and CQSS",
-           fluidRow(
-             column(1),
-             column(10, 
-                    includeMarkdown("about.Rmd")),
-             column(1)
-           )
+  navbarMenu("About...",
+             tabPanel("CQSS",
+                      fluidRow(
+                        column(1),
+                        column(10, 
+                               includeMarkdown("about.Rmd")),
+                        column(1)
+                      )
+             ),
+             tabPanel("CQAB",
+                      fluidRow(
+                        column(1),
+                        column(10, 
+                               includeMarkdown("about_cqab.Rmd")),
+                        column(1)
+                      )
+             ),
+             tabPanel("EMA",
+                       fluidRow(
+                         column(1),
+                         column(10, 
+                                includeMarkdown("about_ema.Rmd")),
+                         column(1)
+                       )
+             )
   )
 ))
