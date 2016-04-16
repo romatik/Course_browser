@@ -5,6 +5,13 @@ f1 <- function(x) if(sum(!is.na(x))>9) mean(as.numeric(x), na.rm=TRUE) else NA_r
 #function calculates number of respondents (not NA)
 f2 <- function(x) sum(!is.na(x))
 
+table_course <- function(dataset){
+  temp <- as.data.frame(table(dataset$A.5.When.did.you.start.EM.Course._Response))
+  names(temp) <- c("Year when respondent started the EMJMD", "Number of respondents to CQSS 2015")
+  return(temp)
+}
+  
+
 questionprint <- function(x, dataset = overall){
   ### function for printing out the likert plot about each individual section of a survey.
   
@@ -624,8 +631,8 @@ plot_question <- function(question, name_of_the_question){
             legend.position = "top",
             group.order = sort(names(question))) + 
     ggtitle(name_of_the_question) + # title of the question
-    theme(text = element_text(size = 14), # setting the text size of the plot
-          plot.margin = unit(c(0, 0.8, 0.3, 0), "lines"), # decreasing white space around the plot
+    theme(text = element_text(size = 14, family = "serif"), # setting the text size of the plot
+          plot.margin = unit(c(0.2, 0.8, 0.3, 0), "lines"), # decreasing white space around the plot
           legend.margin = unit(0, "lines"), # deleting space around legend
           legend.key.size = unit(0.5, "lines"), # decreasing size of legend elements
           legend.background = element_rect(colour = "gray", fill = NA, size = 0.1), # adding a frame around the legend

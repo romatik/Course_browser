@@ -38,9 +38,26 @@ tenormore <- dataset %>%
 colnames(tenormore) <- c("Course", "Respondents")
 
 shinyUI(
-  navbarPage("Course Browser", 
-             footer = h6("Created by Mikhail Balyasin, head of Quantitative team of CQAB of EMA |", a(" github", href = "https://github.com/romatik/Course_browser"), align = "center"),
-             
+  navbarPage(title = "Course Browser", 
+             footer = h6("Created by Mikhail Balyasin, head of Quantitative team of CQAB of EMA |", 
+                         a(" github", href = "https://github.com/romatik/Course_browser"), 
+                         align = "center"),
+             header = tags$style(HTML("
+                                      @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+                                      
+                                      h3 {
+                                      font-size: 28px;
+                                      }
+
+                                      /* latin */
+                                      body {
+                                      font-family: 'Open Sans';
+                                      font-style: normal;
+                                      font-weight: 400;
+                                      font-size: 16px;
+                                      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+                                      }
+                                      ")),
              
   tabPanel("Introduction",
            fluidRow(
@@ -60,7 +77,7 @@ shinyUI(
            sidebarLayout(
              
             sidebarPanel(
-              selectInput("course", "Course:", 
+              selectInput("course", label = h3("Course:"), 
                           choices=unique(as.character(tenormore$Course))),
               hr(),
               checkboxGroupInput("checkGroup", label = h3("Questions"), 
@@ -78,6 +95,9 @@ shinyUI(
             ),
     
               mainPanel(h2(textOutput("course_name"), align = "center"),
+                        hr(),
+                        br(),
+                        dataTableOutput("students"),
                         hr(),
                         uiOutput("course_plots")
               )
@@ -118,5 +138,6 @@ shinyUI(
                          column(1)
                        )
              )
-  )
+  ),
+  theme = "www/bootstrap.min.css"
 ))

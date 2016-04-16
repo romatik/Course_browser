@@ -7,14 +7,10 @@ output: html_document
 
 ### Erasmus Mundus Students and Alumni Association
 
-EMA was established in 2006 at the initiative of the Directorate General for Education and Culture of the European Commission. The Association was driven by the Erasmus Mundus students from the very start developing into a dynamic and democratic organisation. 
+The Erasmus Mundus Students and Alumni Association (EMA) is a network for students and alumni of all Erasmus Mundus Joint Master and PhD Programmes.
 
-In October 2006 the first EMA Liaison Group has met to decide on the statute of the Association, its logo and structure. The Association was ever since goverened by the Steering Committee, a motivated group of dedicated volunteers. 
+Erasmus Mundus offers scholarships for students and academics from all over the world. The mission of the Association is to serve the interests of Erasmus Mundus Students and Alumni, notably by providing a forum for networking, communication and collaboration, and by promoting Erasmus Mundus as a European programme of excellence in international education.
 
-In 2007 the Service Provider for EMA was selected, providing the technical and organisational support to the Association.
+EMA was established in 2006 as an  initiative of the Directorate General for Education and Culture of the European Commission. The Association was driven by the Erasmus Mundus students from the very start and has developed into a dynamic and democratic organisation.
 
-In October 2007 the first General Assembly of EMA took place in Brussels, having turned into an annual main event of the Association later hosted by the universities in Perugia, Vilnius, Madrid, Budapest and Prague. 
-
-In 2008 a first regional chapter of EMA in India was formed, the other regions followed and by 2012 EMA regional chapters family is complete.
-
-In 2010 EMA members voted on changing the initial structure of the Association. Four service teams are formed, professional networks are emerging at members' initiatives. Social initiatives followed: in 2011 EMA LGBT network was formed and EMA Women was created in 2012. 
+You can learn more about EMA [here](http://em-a.eu/)!

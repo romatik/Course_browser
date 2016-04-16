@@ -9,13 +9,13 @@ likert_levels <- c("Very unsatisfied", "Somewhat unsatisfied", "Somewhat satisfi
 agree_levels <- c("Disagree", "Somewhat disagree", "Somewhat agree", "Agree")
 load("./data/example.dat")
 
-shinyServer(function(input, output) {
+shinyServer(function(input, output, session) {
 
   ### values change only after user presses "Submit" button
   datasetInput <- eventReactive(input$go, {
     dataset[dataset$A.2.name.of.Erasmus.Mundus.master.course. == input$course,] 
   })
-  
+
   erasmusInput <- eventReactive(input$go,{
     dataset
   })
@@ -27,6 +27,12 @@ shinyServer(function(input, output) {
   courseInput <- eventReactive(input$go, { 
     paste(input$course)
   })
+  
+  output$students <- renderDataTable(table_course(datasetInput()), options = list(dom = 't', searching = FALSE,
+                                                                                  columnDefs = list(list(width = "190px", targets = "_all")),
+                                                                                  align = "center"
+                                                                                  )
+                                     )
   
   ### output values to be sent to user after the button "Submit" was pressed
   output$course_name <- renderText({courseInput()})

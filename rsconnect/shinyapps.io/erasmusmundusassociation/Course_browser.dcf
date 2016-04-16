@@ -2,8 +2,8 @@ name: Course_browser
 account: erasmusmundusassociation
 server: shinyapps.io
 appId: 76866
-bundleId: 400075
+bundleId: 421149
 url: https://erasmusmundusassociation.shinyapps.io/Course_browser/
-when: 1458581159.78441
+when: 1460751765.56799
 asMultiple: FALSE
 asStatic: FALSE
