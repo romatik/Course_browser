@@ -28,10 +28,11 @@ shinyServer(function(input, output, session) {
     paste(input$course)
   })
   
-  output$students <- renderDataTable(table_course(datasetInput()), options = list(dom = 't', searching = FALSE,
-                                                                                  columnDefs = list(list(width = "190px", targets = "_all")),
-                                                                                  align = "center"
-                                                                                  )
+  output$students <- renderDataTable(table_course(datasetInput()), 
+                                     options = list(dom = 't', searching = FALSE,
+                                                    columnDefs = list(list(width = "190px", targets = "_all")),
+                                                    align = "center"
+                                                    )
                                      )
   
   ### output values to be sent to user after the button "Submit" was pressed
@@ -89,4 +90,30 @@ shinyServer(function(input, output, session) {
     }
   })
   
+  #http://stackoverflow.com/questions/34315485/linking-to-a-tab-or-panel-of-a-shiny-app
+  observeEvent(input$link_to_programs, {
+    newvalue <- "programs"
+    updateTabsetPanel(session, "panels", newvalue)
+  })
+  observeEvent(input$link_to_acknowledgments, {
+    newvalue <- "acknowledgments"
+    updateTabsetPanel(session, "panels", newvalue)
+  })
+  observeEvent(input$link_to_cqss, {
+    newvalue <- "cqss"
+    updateTabsetPanel(session, "panels", newvalue)
+  })
+  observeEvent(input$link_to_cqab, {
+    newvalue <- "cqab"
+    updateTabsetPanel(session, "panels", newvalue)
+  })
+  observeEvent(input$link_to_ema, {
+    newvalue <- "ema"
+    updateTabsetPanel(session, "panels", newvalue)
+  })
+  observeEvent(input$link_to_faq, {
+    newvalue <- "faq"
+    updateTabsetPanel(session, "panels", newvalue)
+  })
+
 })

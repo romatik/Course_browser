@@ -38,7 +38,7 @@ tenormore <- dataset %>%
 colnames(tenormore) <- c("Course", "Respondents")
 
 shinyUI(
-  navbarPage(title = "Course Browser", 
+  navbarPage(title = "Course Browser", id = "panels",
              footer = h6("Created by Mikhail Balyasin, head of Quantitative team of CQAB of EMA |", 
                          a(" github", href = "https://github.com/romatik/Course_browser"), 
                          align = "center"),
@@ -59,21 +59,41 @@ shinyUI(
                                       }
                                       ")),
              
-  tabPanel("Introduction",
+  tabPanel("Home", value = "home",
            fluidRow(
              column(1),
-             column(10, 
-                    includeMarkdown("introduction.Rmd"),
-                    br(),
-                    dataTableOutput("example"),
-                    br(),
-                    includeMarkdown("introduction_after_table.Rmd")
+             column(10,
+                    h3("Welcome"),
+                    p(img(src = "EMA_large.png", align = "right", width = "30%"),
+                      "This web-site hosts an online version of the data that", 
+                      actionLink("link_to_cqab", "Course Quality Advisory Board (CQAB)"),
+                      "of the",
+                      actionLink("link_to_ema", "Erasmus Mundus Student and Alumni Association (EMA)"),
+                      "collected in 2015 through Course Quality of Students Services (CQSS) survey. It's main goal is to give
+                      access to everyone in a most transparent and convenient way. Course browser, that you can find at the tab ",
+                      actionLink("link_to_programs", "CQSS 2015"),
+                      ", gives access to information about 78 Erasmus Mundus programs that received 10 or more responses from
+                      students of their respective programs. We hope that you find that information useful and enlightening."),
+                    p("CQAB is always eager to receive further feedback from stakeholders on how future CQSS 
+                      products and their contents may be improved in order to maximize their usefulness. 
+                      We understand that courses themselves are best suited to address quality concerns, 
+                      and we strongly suggest that present information, with its limitations, is triangulated 
+                      with other available data for each course."),
+                    p("If you want to learn more about people behind this report you can visit tab ", 
+                      actionLink("link_to_acknowledgments", "\"Acknowledgments\".")),
+                    p("To learn more about CQSS and what kind of data we've collected click ", 
+                      actionLink("link_to_cqss", "here"), 
+                      " or click on \"About... -> CQSS\" at the top menu",
+                      ". If you have questions about the tool, you can visit FAQ ",
+                      actionLink("link_to_faq", "here.")),
+                    p("If you still have questions about any information presented at this page, you can always
+                      contact us at cqab.chair@em-a.eu. We are looking forward to your feedback!")
                     ),
              column(1)
            )
   ),
   
-  tabPanel("Individual programs",
+  tabPanel("CQSS 2015", value = "programs",
            sidebarLayout(
              
             sidebarPanel(
@@ -103,26 +123,29 @@ shinyUI(
               )
            )
   ),
-
-  tabPanel("Acknowledgments",
+  
+  tabPanel("FAQ", value = "faq",
            fluidRow(
              column(1),
              column(10, 
-                    includeMarkdown("acknowledgments.Rmd")),
+                    includeHTML("faq.Rmd")),
              column(1)
            )
   ),
   
   navbarMenu("About...",
-             tabPanel("CQSS",
+             tabPanel("CQSS", value = "cqss",
                       fluidRow(
                         column(1),
                         column(10, 
-                               includeMarkdown("about.Rmd")),
+                               includeMarkdown("about_cqss_before.Rmd"),
+                               dataTableOutput("example"),
+                               includeMarkdown("about_cqss_after_table.Rmd")
+                               ),
                         column(1)
                       )
              ),
-             tabPanel("CQAB",
+             tabPanel("CQAB", value = "cqab",
                       fluidRow(
                         column(1),
                         column(10, 
@@ -130,7 +153,7 @@ shinyUI(
                         column(1)
                       )
              ),
-             tabPanel("EMA",
+             tabPanel("EMA", value = "ema",
                        fluidRow(
                          column(1),
                          column(10, 
@@ -139,5 +162,12 @@ shinyUI(
                        )
              )
   ),
-  theme = "www/bootstrap.min.css"
+  tabPanel("Acknowledgments", value = "acknowledgments",
+           fluidRow(
+             column(1),
+             column(10, 
+                    includeMarkdown("acknowledgments.Rmd")),
+             column(1)
+           )
+  )
 ))

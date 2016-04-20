@@ -2,8 +2,9 @@ name: Course_browser
 account: erasmusmundusassociation
 server: shinyapps.io
 appId: 76866
-bundleId: 421149
+bundleId: 426525
 url: https://erasmusmundusassociation.shinyapps.io/Course_browser/
-when: 1460751765.56799
+when: 1461168666.60564
 asMultiple: FALSE
 asStatic: FALSE
+ignoredFiles: (misha-ThinkPad-Edge-E130's conflicted copy 2016-04-20).Rhistory

@@ -1,0 +1,302 @@
+<div class="container">
+    <div class="panel-group" id="accordion">
+    
+    
+        <div class="faqHeader">Questions about the online tool</div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Why does the online tool include information about some EMJMDs and not others?</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    Online tool contains information only on EMJMDs with 10 or more respondents in total. Internally, CQAB decided that 10 respondents is enough data to have at least some glimpse of students’ attitudes toward their program. There were 78 programs that satisfied that criteria.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Why some programs have data on some questions and not on others?</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+The online tool displays information only for items for which 10 or more responses were received. Not all respondents replied to every single question, thus some items received less than 10 responses. All questions where we do not have enough data are accompanied by the following text: “Not enough data were collected on this question”.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="faqHeader">Questions about the CQSS survey and its results</div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">What is the 2015 CQSS survey response rate?</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                The survey collected 2131 fully complete responses. Unfortunately, we can only calculate the response rate for EMJMD students which received Erasmus Mundus scholarships, since there are no reliable data on the number of self-paying students in EMJMDs. The 2015 CQSS survey response rate for students with Erasmus Mundus scholarships can be found in the table below. We do not have any reasons to suspect that response rates for self-paying students was considerably lower.
+<p>&nbsp;</p>
+<table border="2" align="center">
+        <colgroup>
+            <col width="210"/>
+            <col width="59"/>
+            <col width="72"/>
+            <col width="67"/>
+            <col width="77"/>
+            <col width="78"/>
+            <col width="80"/>
+        </colgroup>
+<tbody>
+<tr>
+<td rowspan="2">&nbsp;</td>
+<td colspan="6">
+<p style="text-align: center;"><strong>Year of enrollment</strong></p>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<p><strong>&lt;2010</strong></p>
+</td>
+<td style="text-align: center;">
+<p><strong>2010</strong></p>
+</td>
+<td style="text-align: center;">
+<p><strong>2011</strong></p>
+</td>
+<td style="text-align: center;">
+<p><strong>2012</strong></p>
+</td>
+<td style="text-align: center;">
+<p><strong>2013</strong></p>
+</td>
+<td style="text-align: center;">
+<p><strong>2014</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">Total number of students enrolled in an EMJMD and awarded an Erasmus Mundus scholarship (<a href="http://eacea.ec.europa.eu/erasmus_mundus/results_compendia/documents/statistics/cumulative/statistics_by_country_erasmus_mundus_masters_students_selected_each_academic_year,_2004-05_to_2013-14.pdf">source</a>)</span></p>
+</td>
+<td style="text-align: center;">
+<p><span style="font-weight: 400;">-</span></p>
+</td>
+<td style="text-align: center;">
+<p><span style="font-weight: 400;">2141</span></p>
+</td>
+<td style="text-align: center;">
+<p><span style="font-weight: 400;">1917</span></p>
+</td>
+<td style="text-align: center;">
+<p><span style="font-weight: 400;">1923</span></p>
+</td>
+<td style="text-align: center;">
+<p><span style="font-weight: 400;">1966</span></p>
+</td>
+<td style="text-align: center;">
+<p><span style="font-weight: 400;">1379</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">Total number of 2015 CQSS survey respondents that were awarded an Erasmus Mundus scholarship</span></p>
+</td>
+<td style="text-align: center;">
+<p><span style="font-weight: 400;">284</span></p>
+</td>
+<td style="text-align: center;">
+<p><span style="font-weight: 400;">94</span></p>
+</td>
+<td style="text-align: center;">
+<p><span style="font-weight: 400;">111</span></p>
+</td>
+<td style="text-align: center;">
+<p><span style="font-weight: 400;">226</span></p>
+</td>
+<td style="text-align: center;">
+<p><span style="font-weight: 400;">535</span></p>
+</td>
+<td style="text-align: center;">
+<p><span style="font-weight: 400;">466</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">Percentage of Erasmus Mundus scholarship holders among 2015 CQSS responses of total number of Erasmus Mundus scholarship holders</span></p>
+</td>
+<td style="text-align: center;">
+<p><span style="font-weight: 400;">-</span></p>
+</td>
+<td style="text-align: center;">
+<p><span style="font-weight: 400;">4.39%</span></p>
+</td>
+<td style="text-align: center;">
+<p><span style="font-weight: 400;">5.79%</span></p>
+</td>
+<td style="text-align: center;">
+<p><span style="font-weight: 400;">11.75%</span></p>
+</td>
+<td style="text-align: center;">
+<p><span style="font-weight: 400;">27.21%</span></p>
+</td>
+<td style="text-align: center;">
+<p><span style="font-weight: 400;">33.79%</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-weight: 400;">Response rate of CQSS survey for Erasmus Mundus scholarship holders</span></p>                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">What should the CQSS survey information be used for?</a>
+                </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse">
+                <div class="panel-body">
+We believe that CQSS survey is first and foremost a conversation starter among internal stakeholders of each EMJMD. This means that CQSS survey data is best used in triangulation with other sources of information on and about quality assurance (surveys, interviews, meetings with students, etc.).                           </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">What should the CQSS survey information not be used for?</a>
+                </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse">
+                <div class="panel-body">
+The CQSS survey is not a rating or ranking exercise in any shape or form. We deliberately decided to use quartile ranges in comparative tables to highlight that CQSS survey data should not be seen as a rating of EMJMD programs. Each program is unique and it is impossible to capture that uniqueness with any standard tool for data collection. 
+                </div>
+            </div>
+        </div>
+
+        <div class="faqHeader">Methodology of the CQSS survey</div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">How are responses anonymized?</a>
+                </h4>
+            </div>
+            <div id="collapseSix" class="panel-collapse collapse">
+                <div class="panel-body">
+Data used in this tool has been anonymized to only include the EMJMD program start year for each respondent. All other potentially identifiable information (age, nationality, gender etc.) has been omitted to ensure the anonymity of responses.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">How were EMJMD course coordinators informed about the survey results pertaining to their course?</a>
+                </h4>
+            </div>
+            <div id="collapseSeven" class="panel-collapse collapse">
+                <div class="panel-body">
+Each EMJMD course coordinator of a course that received 10 or more CQSS responses received an individualized report. This report includes the data available in this online tool. Additionally, course reports include an overall analysis of the qualitative data collected through the open questions of the CQSS survey.
+                </div>
+            </div>
+        </div>
+                <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">How were responses to the CQSS survey collected from EMJMD students and alumni?</a>
+                </h4>
+            </div>
+            <div id="collapseEight" class="panel-collapse collapse">
+                <div class="panel-body">
+                    The CQSS survey was distributed online through multiple channels:
+                      <ul>
+                        <li>CQAB asked course coordinators of EMJMDs were asked to distribute the survey to their current and past students.</li>
+                        <li>European Commission representatives asked course coordinators to distribute the survey to their current and past students.</li>
+                        <li>Program representatives, that is representatives of each EMJMD course with EMA were asked to distribute the survey to their peers.</li>
+                        <li>An internal email was sent to all EMA members.</li>
+                        <li>The closed Facebook groups of courses with low response numbers were used to send further nudges.</li>
+                      </ul>
+                  In total we have received 2131 fully-completed responses (i.e., respondent went through entire 2015 CQSS survey).
+                </div>
+            </div>
+        </div>
+
+
+        
+        <div class="faqHeader">Future work</div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">Are there any other sources where I can read about your work?</a>
+                </h4>
+            </div>
+            <div id="collapseNine" class="panel-collapse collapse">
+                <div class="panel-body">
+We have published the methodology of the 2015 CQSS survey in the peer-reviewed journal <a href = "https://vo.hse.ru/en/2016--1/178804999.html">Educational Studies Moscow</a>. We are currently working on further publications based on the results of the survey. All publications will be linked via this tool online. Stay tuned!
+                </div>
+            </div>
+        </div>
+                <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">When will the next CQSS survey wave be launched?</a>
+                </h4>
+            </div>
+            <div id="collapseTen" class="panel-collapse collapse">
+                <div class="panel-body">
+The next wave of the CQSS survey is scheduled to be launched at the beginning of June 2016. It will feature an improved version of 2015 edition of the CQSS survey. We will make sure that data we obtain is both comparable with the CQSS 2015 wave, but that the 2016 wave of the CQSS survey includes pertinent feedback that we received from various stakeholders.
+                </div>
+            </div>
+        </div>
+
+        <div class="faqHeader">Feedback</div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">I really like what you are doing and would like to be a part of it. How do I join?</a>
+                </h4>
+            </div>
+            <div id="collapseEleven" class="panel-collapse collapse">
+                <div class="panel-body">
+CQAB members are selected through an open competition each year in November. Each CQAB member has a one year renewable mandate. In order be eligible, applicants need to be EMA members. However, if you think that you can help us in some way, do send an email highlighting your relevant experience to <a href="mailto:cqab.chair@em-a.eu">cqab.chair@em-a.eu</a>.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+        <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve">I have found a mistake/bug/inconsistency in the online-tool. How do I report it?</a>
+                </h4>
+            </div>
+            <div id="collapseTwelve" class="panel-collapse collapse">
+                <div class="panel-body">
+If you have found an error or something that you think we should change, please tell us at <a href="mailto:cqab.chair@em-a.eu">cqab.chair@em-a.eu</a>. Thank you in advance for the help!
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThirteen">How can I send you more information about the quality of EMJMD courses?</a>
+                </h4>
+            </div>
+            <div id="collapseThirteen" class="panel-collapse collapse">
+                <div class="panel-body">
+You can send any information you think is relevant to <a href="mailto:cqab.chair@em-a.eu">cqab.chair@em-a.eu</a>. For individual cases of urgent quality concerns please use the following e-mail address <a href="mailto:em.feedback@em-a.eu">em.feedback@em-a.eu</a>.
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+<style>
+    .faqHeader {
+        font-size: 27px;
+        margin: 20px;
+    }
+
+</style>

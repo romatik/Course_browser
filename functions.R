@@ -139,7 +139,7 @@ comparative_df <- function(x, course_dataset, dataset){
   
   # checking to see if there is any data for that question
   if(dim(question_dataset)[2] == 0)
-    return (as.data.frame("There are no data for that question"))
+    return (as.data.frame("Not enough data were collected on this question"))
 
   #calculating means for a specific course
   means_question <- question_dataset %>% 
