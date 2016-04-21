@@ -46,7 +46,7 @@ shinyServer(function(input, output, session) {
       lapply(questionInput(),
              function(i){
                tags$div(class = "group-output",
-                textOutput(paste0("question", i), container = h4),
+                textOutput(paste0("question", i), container = h3),
                 plotOutput(paste0("plot", i), height = "100%"),
                 br(),
                 dataTableOutput(paste0("tablename", i)),

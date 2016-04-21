@@ -629,9 +629,10 @@ plot_question <- function(question, name_of_the_question){
             centered = FALSE, # stretcthing the bar from left to right
             wrap = 40, # wrap statement for dimension names
             legend.position = "top",
+            legend = NULL,
             group.order = sort(names(question))) + 
     ggtitle(name_of_the_question) + # title of the question
-    theme(text = element_text(size = 14, family = "serif"), # setting the text size of the plot
+    theme(text = element_text(size = 14, family = "Open Sans"), # setting the text size of the plot
           plot.margin = unit(c(0.2, 0.8, 0.3, 0), "lines"), # decreasing white space around the plot
           legend.margin = unit(0, "lines"), # deleting space around legend
           legend.key.size = unit(0.5, "lines"), # decreasing size of legend elements

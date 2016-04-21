@@ -57,6 +57,24 @@ shinyUI(
                                       font-size: 16px;
                                       unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
                                       }
+                        
+                                      /* changing appearance of submit button */
+                                      #go{background-color:rgb(0,78,134);
+                                          color:white;
+                                          vertical-align: middle; 
+                                          height: 50px; 
+                                          width: 100px; 
+                                          font-size: 20px;
+                                      }
+                                        
+                                      /* tables */
+                                      TD {font-size:12px}
+                                      TH {font-size:12px}
+
+                                      /* removing underlining for all links on hover */
+                                      a:focus, a:hover{
+                                          text-decoration: none;
+                                      }
                                       ")),
              
   tabPanel("Home", value = "home",
@@ -87,42 +105,47 @@ shinyUI(
                       ". If you have questions about the tool, you can visit FAQ ",
                       actionLink("link_to_faq", "here.")),
                     p("If you still have questions about any information presented at this page, you can always
-                      contact us at cqab.chair@em-a.eu. We are looking forward to your feedback!")
+                      contact us at cqab.chair@em-a.eu. We are looking forward to your feedback!"),
+                    fluidRow(
+                      column(12,
+                             selectInput("course", label = h3("1. Choose course:"), 
+                                         choices=unique(as.character(tenormore$Course)), 
+                                         width = "54%")
+                      )
+                    ),
+                    fluidRow(
+                      column(12,
+                             checkboxGroupInput("checkGroup", label = h3("2. Choose questions:"), 
+                                                c("Question 1: Info and support before the start" = "B.1.1",
+                                                  "Question 2: Introduction process" = "B.1.3",
+                                                  "Question 3: Helpfulness of units/people" = "B.2.1",
+                                                  "Question 4: Support on issues" = "B.2.2",
+                                                  "Question 5: Feedback mechanisms" = "C.1",
+                                                  "Question 6: First supervisor" = "L.4",
+                                                  "Question 7: Second supervisor" = "L.5",
+                                                  "Question 8: Personal development" = "L.6",
+                                                  "Question 9: Field experience" = "L.3.a",
+                                                  "Question 10: Internship experience" = "L.2.a"),
+                                                selected = c("B.1.1", "B.1.3", "B.2.1", "B.2.2", "C.1", "L.4", "L.5", "L.6", "L.3.a", "L.2.a"),
+                                                width = "100%")
+                      )
+                    ),
+                    fluidRow(
+                      column(6, align = "center", offset = 3,
+                             actionButton("go", "Submit", align = "center")
+                             )
+                    ),
+                    fluidRow(h2(textOutput("course_name"), align = "center"),
+                             hr(),
+                             br(),
+                             dataTableOutput("students"),
+                             hr(),
+                             uiOutput("course_plots"))
                     ),
              column(1)
            )
   ),
   
-  tabPanel("CQSS 2015", value = "programs",
-           sidebarLayout(
-             
-            sidebarPanel(
-              selectInput("course", label = h3("Course:"), 
-                          choices=unique(as.character(tenormore$Course))),
-              hr(),
-              checkboxGroupInput("checkGroup", label = h3("Questions"), 
-                                 c("Question 1: Info and support before the start" = "B.1.1",
-                                   "Question 2: Introduction process" = "B.1.3",
-                                   "Question 3: Helpfulness of units/people" = "B.2.1",
-                                   "Question 4: Support on issues" = "B.2.2",
-                                   "Question 5: Feedback mechanisms" = "C.1",
-                                   "Question 6: First supervisor" = "L.4",
-                                   "Question 7: Second supervisor" = "L.5",
-                                   "Question 8: Personal development" = "L.6",
-                                   "Question 9: Field experience" = "L.3.a",
-                                   "Question 10: Internship experience" = "L.2.a")),
-              actionButton("go", "Submit")
-            ),
-    
-              mainPanel(h2(textOutput("course_name"), align = "center"),
-                        hr(),
-                        br(),
-                        dataTableOutput("students"),
-                        hr(),
-                        uiOutput("course_plots")
-              )
-           )
-  ),
   
   tabPanel("FAQ", value = "faq",
            fluidRow(
