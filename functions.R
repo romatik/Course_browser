@@ -215,12 +215,12 @@ comparative_df <- function(x, course_dataset, dataset){
   
   df <- merge(df, quartile_info, by = 0, all = TRUE)
 
-  names(df) <- c("Dimension", "Mean", "n", "EM mean", "0% - 25%", "25% - 50%", "50% - 75%", "75% - 100%", "quartile")
+  names(df) <- c("Dimension", "Course mean", "n", "EM mean", "0% - 25%", "25% - 50%", "50% - 75%", "75% - 100%", "quartile")
   
   df <- df[complete.cases(df),] #deleting all rows with NA in the mean
   
   #rounding mean and EM mean to 2 decimal places
-  df$Mean <- round(df$Mean, 2) 
+  df[,2] <- round(df[,2], 2) 
   df[,4] <- round(df[,4], 2)
   
   df$quartile <- NULL

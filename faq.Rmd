@@ -1,34 +1,19 @@
 <div class="container">
     <div class="panel-group" id="accordion">
-
-        <div class="faqHeader">Questions about the online tool</div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Why does the online tool include information about some EMJMDs and not others?</a>
-                </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in">
-                <div class="panel-body">
-                    Online tool contains information only on EMJMDs with 10 or more respondents in total. Internally, CQAB decided that 10 respondents is enough data to have at least some glimpse of students’ attitudes toward their program. There were 78 programs that satisfied that criteria.
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Why some programs have data on some questions and not on others?</a>
-                </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
-                <div class="panel-body">
-The online tool displays information only for items for which 10 or more responses were received. Not all respondents replied to every single question, thus some items received less than 10 responses. All questions where we do not have enough data are accompanied by the following text: “Not enough data were collected on this question”.
-                </div>
-            </div>
-        </div>
-
-
+    
         <div class="faqHeader">Questions about the CQSS survey and its results</div>
+            <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFourteen">What is EMJMD?</a>
+                </h4>
+            </div>
+            <div id="collapseFourteen" class="panel-collapse collapse in">
+                <div class="panel-body">
+                      <a href="https://eacea.ec.europa.eu/erasmus-plus/library/emjmd-catalogue_en" target = "_blank">EMJMDs</a>  or Erasmus Mundus Joint Master Degrees, are joint or dual master courses supported by the European Commission. Students of EMJMDs study in at least two different universities, in two different European countries.
+                </div>
+            </div>
+        </div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
@@ -78,7 +63,7 @@ The online tool displays information only for items for which 10 or more respons
 </tr>
 <tr>
 <td>
-<p><span style="font-weight: 400;">Total number of students enrolled in an EMJMD and awarded an Erasmus Mundus scholarship (<a href="http://eacea.ec.europa.eu/erasmus_mundus/results_compendia/documents/statistics/cumulative/statistics_by_country_erasmus_mundus_masters_students_selected_each_academic_year,_2004-05_to_2013-14.pdf">source</a>)</span></p>
+<p><span style="font-weight: 400;">Total number of students enrolled in an EMJMD and awarded an Erasmus Mundus scholarship (<a href="http://eacea.ec.europa.eu/erasmus_mundus/results_compendia/documents/statistics/cumulative/statistics_by_country_erasmus_mundus_masters_students_selected_each_academic_year,_2004-05_to_2013-14.pdf" target = "_blank">source</a>)</span></p>
 </td>
 <td style="text-align: center;">
 <p><span style="font-weight: 400;">-</span></p>
@@ -174,6 +159,34 @@ The CQSS survey is not a rating or ranking exercise in any shape or form. We del
             </div>
         </div>
 
+        <div class="faqHeader">Questions about the online tool</div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Why does the online tool include information about some EMJMDs and not others?</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+                <div class="panel-body">
+                    Online tool contains information only on EMJMDs with 10 or more respondents in total. Internally, CQAB decided that 10 respondents is enough data to have at least some glimpse of students’ attitudes toward their program. There were 78 programs that satisfied that criteria.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Why some programs have data on some questions and not on others?</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+The online tool displays information only for items for which 10 or more responses were received. Not all respondents replied to every single question, thus some items received less than 10 responses. All questions where we do not have enough data are accompanied by the following text: “Not enough data were collected on this question”.
+                </div>
+            </div>
+        </div>
+
+
+
         <div class="faqHeader">Methodology of the CQSS survey</div>
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -231,7 +244,7 @@ Each EMJMD course coordinator of a course that received 10 or more CQSS response
             </div>
             <div id="collapseNine" class="panel-collapse collapse">
                 <div class="panel-body">
-We have published the methodology of the 2015 CQSS survey in the peer-reviewed journal <a href = "https://vo.hse.ru/en/2016--1/178804999.html">Educational Studies Moscow</a>. We are currently working on further publications based on the results of the survey. All publications will be linked via this tool online. Stay tuned!
+We have published the methodology of the 2015 CQSS survey in the peer-reviewed journal <a href = "https://vo.hse.ru/en/2016--1/178804999.html" target = "_blank">Educational Studies Moscow</a>. We are currently working on further publications based on the results of the survey. All publications will be linked via this tool online. Stay tuned!
                 </div>
             </div>
         </div>

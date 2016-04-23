@@ -15,4 +15,4 @@ EMA was established in 2006 as an  initiative of the Directorate General for Edu
 
 You can learn more about EMA [here](http://em-a.eu/)!
 
-<img src="data/EMA_full.png" width="65%" align="center" style="margin: 0px 20px" />
+<img src="data/EMA_full.png" width="55%" align="center" style="margin: 0px 20px" />

@@ -40,7 +40,7 @@ colnames(tenormore) <- c("Course", "Respondents")
 shinyUI(
   navbarPage(title = "Course Browser", id = "panels",
              footer = h6("Created by Mikhail Balyasin, head of Quantitative team of CQAB of EMA |", 
-                         a(" github", href = "https://github.com/romatik/Course_browser"), 
+                         a(" github", href = "https://github.com/romatik/Course_browser", target = "_blank"), 
                          align = "center"),
              header = tags$style(HTML("
                                       @import url(https://fonts.googleapis.com/css?family=Open+Sans);
@@ -50,7 +50,7 @@ shinyUI(
                                       }
 
                                       /* latin */
-                                      body {
+                                      html, body {
                                       font-family: 'Open Sans';
                                       font-style: normal;
                                       font-weight: 400;
@@ -69,7 +69,7 @@ shinyUI(
                                         
                                       /* tables */
                                       TD {font-size:12px}
-                                      TH {font-size:12px}
+                                      TH {font-size:14px}
 
                                       /* removing underlining for all links on hover */
                                       a:focus, a:hover{
@@ -82,30 +82,20 @@ shinyUI(
              column(1),
              column(10,
                     h3("Welcome"),
-                    p(img(src = "EMA_large.png", align = "right", width = "30%"),
+                    p(actionLink("link_to_ema", img(src = "EMA_large.png", align = "right", width = "30%")),
                       "This web-site hosts an online version of the data that", 
                       actionLink("link_to_cqab", "Course Quality Advisory Board (CQAB)"),
                       "of the",
-                      actionLink("link_to_ema", "Erasmus Mundus Student and Alumni Association (EMA)"),
+                      actionLink("link_to_ema1", "Erasmus Mundus Student and Alumni Association (EMA)"),
                       "collected in 2015 through Course Quality of Students Services (CQSS) survey. It's main goal is to give
-                      access to everyone in a most transparent and convenient way. Course browser, that you can find at the tab ",
-                      actionLink("link_to_programs", "CQSS 2015"),
-                      ", gives access to information about 78 Erasmus Mundus programs that received 10 or more responses from
+                      access to everyone in a most transparent and convenient way. Course browser 
+                      gives access to information about 78 Erasmus Mundus programs that received 10 or more responses from
                       students of their respective programs. We hope that you find that information useful and enlightening."),
                     p("CQAB is always eager to receive further feedback from stakeholders on how future CQSS 
                       products and their contents may be improved in order to maximize their usefulness. 
                       We understand that courses themselves are best suited to address quality concerns, 
                       and we strongly suggest that present information, with its limitations, is triangulated 
                       with other available data for each course."),
-                    p("If you want to learn more about people behind this report you can visit tab ", 
-                      actionLink("link_to_acknowledgments", "\"Acknowledgments\".")),
-                    p("To learn more about CQSS and what kind of data we've collected click ", 
-                      actionLink("link_to_cqss", "here"), 
-                      " or click on \"About... -> CQSS\" at the top menu",
-                      ". If you have questions about the tool, you can visit FAQ ",
-                      actionLink("link_to_faq", "here.")),
-                    p("If you still have questions about any information presented at this page, you can always
-                      contact us at cqab.chair@em-a.eu. We are looking forward to your feedback!"),
                     fluidRow(
                       column(12,
                              selectInput("course", label = h3("1. Choose course:"), 
@@ -117,7 +107,7 @@ shinyUI(
                       column(12,
                              checkboxGroupInput("checkGroup", label = h3("2. Choose questions:"), 
                                                 c("Question 1: Info and support before the start" = "B.1.1",
-                                                  "Question 2: Introduction process" = "B.1.3",
+                                                  "Question 2: Introduction process during orientation" = "B.1.3",
                                                   "Question 3: Helpfulness of units/people" = "B.2.1",
                                                   "Question 4: Support on issues" = "B.2.2",
                                                   "Question 5: Feedback mechanisms" = "C.1",
@@ -150,6 +140,13 @@ shinyUI(
   tabPanel("FAQ", value = "faq",
            fluidRow(
              column(1),
+             column(10,
+                    p(actionLink("link_to_home", "Back to Home"))),
+             column(1)
+           ),
+           
+           fluidRow(
+             column(1),
              column(10, 
                     includeHTML("faq.Rmd")),
              column(1)
@@ -158,6 +155,12 @@ shinyUI(
   
   navbarMenu("About...",
              tabPanel("CQSS", value = "cqss",
+                      fluidRow(
+                        column(1),
+                        column(10,
+                               p(actionLink("link_to_home1", "Back to Home"))),
+                        column(1)
+                      ),
                       fluidRow(
                         column(1),
                         column(10, 
@@ -171,13 +174,25 @@ shinyUI(
              tabPanel("CQAB", value = "cqab",
                       fluidRow(
                         column(1),
+                        column(10,
+                               p(actionLink("link_to_home2", "Back to Home"))),
+                        column(1)
+                      ),
+                      fluidRow(
+                        column(1),
                         column(10, 
                                includeMarkdown("about_cqab.Rmd")),
                         column(1)
                       )
              ),
              tabPanel("EMA", value = "ema",
-                       fluidRow(
+                      fluidRow(
+                        column(1),
+                        column(10,
+                               p(actionLink("link_to_home3", "Back to Home"))),
+                        column(1)
+                      ),
+                      fluidRow(
                          column(1),
                          column(10, 
                                 includeMarkdown("about_ema.Rmd")),
@@ -188,8 +203,33 @@ shinyUI(
   tabPanel("Acknowledgments", value = "acknowledgments",
            fluidRow(
              column(1),
+             column(10,
+                    p(actionLink("link_to_home4", "Back to Home"))),
+             column(1)
+           ),
+           fluidRow(
+             column(1),
              column(10, 
                     includeMarkdown("acknowledgments.Rmd")),
+             column(1)
+           )
+  ),
+  tabPanel("Contact us", value = "contact",
+           fluidRow(
+             column(1),
+             column(10,
+                    p(actionLink("link_to_home5", "Back to Home"))),
+             column(1)
+           ),
+           fluidRow(
+             column(1),
+             column(10, 
+                    h3("Contact information"),
+                    p("We are always happy to hear your feedback. If you have questions about anything you found on this page, first we recommend
+                      checking out the FAQ, but if your issue is not answered there, feel free to send us an e-mail at ",
+                      a(href="mailto:cqab.char@em-a.eu", "cqab.char@em-a.eu"), "."),
+                    img(src = "CQAB_large.png", style="margin: 0px 20px", width = "50%")
+                    ),
              column(1)
            )
   )

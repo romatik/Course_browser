@@ -91,10 +91,31 @@ shinyServer(function(input, output, session) {
   })
   
   #http://stackoverflow.com/questions/34315485/linking-to-a-tab-or-panel-of-a-shiny-app
-  observeEvent(input$link_to_programs, {
-    newvalue <- "programs"
+  observeEvent(input$link_to_home, {
+    newvalue <- "home"
     updateTabsetPanel(session, "panels", newvalue)
   })
+  observeEvent(input$link_to_home1, {
+    newvalue <- "home"
+    updateTabsetPanel(session, "panels", newvalue)
+  })
+  observeEvent(input$link_to_home2, {
+    newvalue <- "home"
+    updateTabsetPanel(session, "panels", newvalue)
+  })
+  observeEvent(input$link_to_home3, {
+    newvalue <- "home"
+    updateTabsetPanel(session, "panels", newvalue)
+  })
+  observeEvent(input$link_to_home4, {
+    newvalue <- "home"
+    updateTabsetPanel(session, "panels", newvalue)
+  })
+  observeEvent(input$link_to_home5, {
+    newvalue <- "home"
+    updateTabsetPanel(session, "panels", newvalue)
+  })
+  
   observeEvent(input$link_to_acknowledgments, {
     newvalue <- "acknowledgments"
     updateTabsetPanel(session, "panels", newvalue)
@@ -111,6 +132,11 @@ shinyServer(function(input, output, session) {
     newvalue <- "ema"
     updateTabsetPanel(session, "panels", newvalue)
   })
+  observeEvent(input$link_to_ema1, {
+    newvalue <- "ema"
+    updateTabsetPanel(session, "panels", newvalue)
+  })
+  
   observeEvent(input$link_to_faq, {
     newvalue <- "faq"
     updateTabsetPanel(session, "panels", newvalue)
