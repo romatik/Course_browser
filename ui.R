@@ -21,7 +21,6 @@ dataset$L.3.a.Rate.the.following.statements.about.field.experience._Overall.qual
 likert_levels <- c("Very unsatisfied", "Somewhat unsatisfied", "Somewhat satisfied", "Very satisfied")
 agree_levels <- c("Disagree", "Somewhat disagree", "Somewhat agree", "Agree")
 
-### questions that need to be printed out
 questions <- c('B.1.1', 'B.1.3', 'B.2.1', 'B.2.2', 'C.1', #overall program satisfaction
                "L.4", "L.5", "L.6", 'L.3.a', 'L.2.a', #internship/field experience
                "N.1.1", "N.1.3", "N.2.1", "N.2.2", "N.3.1", "N.4.1", #satisfaction in first university
@@ -29,7 +28,6 @@ questions <- c('B.1.1', 'B.1.3', 'B.2.1', 'B.2.2', 'C.1', #overall program satis
                "P.1.1", "P.1.3", "P.2.1", "P.2.2", "P.3.1", "P.4.1", #satisfaction in third university
                "Q.1.1", "Q.1.3", "Q.2.1", "Q.2.2", "Q.3.1", "Q.4.1") #satisfaction in fourth university
 
-### finding out courses with 10 or more respondents in the dataset
 tenormore <- dataset %>%
   select(A.2.name.of.Erasmus.Mundus.master.course.) %>%
   group_by(A.2.name.of.Erasmus.Mundus.master.course.) %>%
@@ -39,63 +37,39 @@ colnames(tenormore) <- c("Course", "Respondents")
 
 shinyUI(
   navbarPage(title = "Course Browser", id = "panels",
-             footer = h6("Created by Mikhail Balyasin, head of Quantitative team of CQAB of EMA |", 
+             footer = h6("Created by ", a(href = "https://ru.linkedin.com/in/mikhailbalyasin", target = "_blank",
+                          "Mikhail Balyasin"), "head of Quantitative team of CQAB of EMA |", 
                          a(" github", href = "https://github.com/romatik/Course_browser", target = "_blank"), 
-                         align = "center"),
-             header = tags$style(HTML("
-                                      @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-                                      
-                                      h3 {
-                                      font-size: 28px;
-                                      }
-
-                                      /* latin */
-                                      html, body {
-                                      font-family: 'Open Sans';
-                                      font-style: normal;
-                                      font-weight: 400;
-                                      font-size: 16px;
-                                      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-                                      }
-                        
-                                      /* changing appearance of submit button */
-                                      #go{background-color:rgb(0,78,134);
-                                          color:white;
-                                          vertical-align: middle; 
-                                          height: 50px; 
-                                          width: 100px; 
-                                          font-size: 20px;
-                                      }
-                                        
-                                      /* tables */
-                                      TD {font-size:12px}
-                                      TH {font-size:14px}
-
-                                      /* removing underlining for all links on hover */
-                                      a:focus, a:hover{
-                                          text-decoration: none;
-                                      }
-                                      ")),
+                         align = "center", id = "footer"),
+             header = HTML('
+                            <link rel="stylesheet" type="text/css" href="style.css">
+                            <script type="text/javascript" src="busy.js"></script>
+                           '),
              
   tabPanel("Home", value = "home",
+           fluidRow(div(class = "busy",  
+                    p("Please wait..."), 
+                    img(src="https://upload.wikimedia.org/wikipedia/commons/4/42/Loading.gif")
+           )),
            fluidRow(
              column(1),
              column(10,
-                    h3("Welcome"),
+                    h3("Welcome to Course Browser"),
                     p(actionLink("link_to_ema", img(src = "EMA_large.png", align = "right", width = "30%")),
-                      "This web-site hosts an online version of the data that", 
+                      "an online tool that represents the data that the ", 
                       actionLink("link_to_cqab", "Course Quality Advisory Board (CQAB)"),
                       "of the",
                       actionLink("link_to_ema1", "Erasmus Mundus Student and Alumni Association (EMA)"),
-                      "collected in 2015 through Course Quality of Students Services (CQSS) survey. It's main goal is to give
-                      access to everyone in a most transparent and convenient way. Course browser 
-                      gives access to information about 78 Erasmus Mundus programs that received 10 or more responses from
-                      students of their respective programs. We hope that you find that information useful and enlightening."),
-                    p("CQAB is always eager to receive further feedback from stakeholders on how future CQSS 
-                      products and their contents may be improved in order to maximize their usefulness. 
-                      We understand that courses themselves are best suited to address quality concerns, 
-                      and we strongly suggest that present information, with its limitations, is triangulated 
-                      with other available data for each course."),
+                      "collected through the Course Quality Students Services (CQSS) survey. In 2015, 
+                      CQAB collected data from students and alumni of more than 150 Erasmus Mundus Joint Master Degree 
+                      (EMJMD) programs in order to ask them about their experiences with their Erasmus Mundus 
+                      masters."),
+                    p("The main goal of Course Browser is to give you access to information about 78* EMJMDs 
+                      in a most transparent and convenient way. We hope that you find this information useful 
+                      and relevant."),
+                    p(class = "footnote", "* Course Browser gives information on 78 Erasmus Mundus programs with 10 or more responses
+                      students of their respective programs. You can find out 
+                      an explanation about what that information means", actionLink("link_to_cqss", "here")),
                     fluidRow(
                       column(12,
                              selectInput("course", label = h3("1. Choose course:"), 
@@ -127,6 +101,7 @@ shinyUI(
                     ),
                     fluidRow(h2(textOutput("course_name"), align = "center"),
                              hr(),
+                             p(class = "footnote", textOutput("disclaimer")),
                              br(),
                              dataTableOutput("students"),
                              hr(),
@@ -228,7 +203,9 @@ shinyUI(
                     p("We are always happy to hear your feedback. If you have questions about anything you found on this page, first we recommend
                       checking out the FAQ, but if your issue is not answered there, feel free to send us an e-mail at ",
                       a(href="mailto:cqab.char@em-a.eu", "cqab.char@em-a.eu"), "."),
-                    img(src = "CQAB_large.png", style="margin: 0px 20px", width = "50%")
+                    a(href = "http://www.em-a.eu/en/about-ema/advisory-boards/course-quality.html", 
+                      img(src = "CQAB_large.png", style="margin: 0px 20px", width = "50%"),
+                      target = "_blank")
                     ),
              column(1)
            )

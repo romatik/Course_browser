@@ -1,0 +1,80 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+                                      
+h3 {
+font-size: 28px;
+}
+
+/* latin 
+	http://codepen.io/cbracco/pen/zekgx - how to stick footer at the bottom
+	*/
+html, body {
+font-family: 'Open Sans';
+position: relative;
+margin: 0;
+padding-bottom: 1rem;
+min-height: 100%;
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* changing appearance of submit button */
+#go{background-color:rgb(0,78,134);
+  color:white;
+  vertical-align: middle; 
+  height: 50px; 
+  width: 100px; 
+  font-size: 20px;
+}
+.footnote{
+  font-size: 0.7rem;
+}
+
+/* tables */
+TD {
+  font-size: 12px;
+}
+table.dataTable thead > tr > th {
+  font-size:14px;
+  font-weight:600;
+  padding-left: 8px;
+  padding-right: 18px;                                      
+}
+
+/* removing underlining for all links on hover */
+a:focus, a:hover{
+  text-decoration: none;
+}
+div.busy { 
+position:absolute;
+background:white;
+top: 80%;
+left: 41%;
+display:none;
+text-align: center;
+font-size:28px;
+vertical-align: middle; 
+border-radius: 5px;
+height: 100px;
+width: 300px;
+}
+
+
+#footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}

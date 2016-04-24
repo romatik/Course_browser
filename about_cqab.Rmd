@@ -7,7 +7,7 @@ output: html_document
 
 ### Course Quality Advisory Board
 
-<img src="data/CQAB_large.png" width="30%" align="left" style="margin: 0px 20px" /> The Course Quality Advisory Board is an independent advisory body that operates on a voluntary basis as part of the Erasmus Mundus Student and Alumni Association. Its members have not and do not receive financial incentives  for their CQAB-related activities. CQAB Membership selection is made through a competitive recruitment process among EMA members. Internally, CQAB has three main separate structures:
+<a href="http://www.em-a.eu/en/about-ema/advisory-boards/course-quality.html" target = "_blank"><img src="data/CQAB_large.png" width="30%" align="left" style="margin: 0px 20px" /></a> The Course Quality Advisory Board is an independent advisory body that operates on a voluntary basis as part of the Erasmus Mundus Student and Alumni Association. Its members have not and do not receive financial incentives  for their CQAB-related activities. CQAB Membership selection is made through a competitive recruitment process among EMA members. Internally, CQAB has three main separate structures:
 
    1. Management of the e-mail account em.feedback@em-a.eu, that assists students with pressing quality issues;
    2. **Survey Team**, tasked with conducting the CQSS survey;

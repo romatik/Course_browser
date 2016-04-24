@@ -24,6 +24,14 @@ shinyServer(function(input, output, session) {
     input$checkGroup
   })
   
+  disclaimerInput <- eventReactive(input$go, {
+    paste("CQAB is always eager to receive further feedback from stakeholders on how future CQSS 
+                      products and their contents may be improved to maximize their usefulness. We understand 
+                      that courses themselves are best suited to address quality concerns, and we strongly 
+                      suggest that present information, with its limitations, is triangulated with other 
+                      available data for each course.")
+  })
+  
   courseInput <- eventReactive(input$go, { 
     paste(input$course)
   })
@@ -37,6 +45,8 @@ shinyServer(function(input, output, session) {
   
   ### output values to be sent to user after the button "Submit" was pressed
   output$course_name <- renderText({courseInput()})
+  
+  output$disclaimer <- renderText({disclaimerInput()})
   
   output$example <- renderDataTable(z, options = list(dom = 't', autoWidth = TRUE, searching = FALSE,
                                                       columnDefs = list(list(width = "190px", targets = c(0)))))
@@ -57,37 +67,37 @@ shinyServer(function(input, output, session) {
   
   
   observeEvent(input$go, {
-    for (i in input$checkGroup) {
-      local({
-        local_i <- i
-        output[[paste0("question", local_i)]] <-
-          renderText({
-            switch(local_i,
-                   B.1.1 = {text <- "Question 1: Info and support before the start"},
-                   B.1.3 = {text <- "Question 2: Introduction process"},
-                   B.2.1 = {text <- "Question 3: Helpfulness of units/people"},
-                   B.2.2 = {text <- "Question 4: Support on issues"},
-                   C.1 =   {text <- "Question 5: Feedback mechanisms"},
-                   L.4 =   {text <- "Question 6: First supervisor"},
-                   L.5 =   {text <- "Question 7: Second supervisor"},
-                   L.6 =   {text <- "Question 8: Personal development"},
-                   L.3.a = {text <- "Question 9: Field experience"},
-                   L.2.a = {text <- "Question 10: Internship experience"}
-            )
-            paste0(text)
-          })
-        
-        output[[paste0("plot", local_i)]] <- 
-          renderPlot({
-            questionprint(local_i, datasetInput())
-          }, height = figure_height(local_i, datasetInput()))
-        
-        output[[paste0("tablename", local_i)]] <-
-          renderDataTable(comparative_df(local_i, datasetInput(), dataset), 
-                          options = list(dom = 't', autoWidth = TRUE, searching = FALSE,
-                                         columnDefs = list(list(width = "190px", targets = c(0)))))
-      })
-    }
+      for (i in input$checkGroup) {
+        local({
+          local_i <- i
+          output[[paste0("question", local_i)]] <-
+            renderText({
+              switch(local_i,
+                     B.1.1 = {text <- "Question 1: Info and support before the start"},
+                     B.1.3 = {text <- "Question 2: Introduction process"},
+                     B.2.1 = {text <- "Question 3: Helpfulness of units/people"},
+                     B.2.2 = {text <- "Question 4: Support on issues"},
+                     C.1 =   {text <- "Question 5: Feedback mechanisms"},
+                     L.4 =   {text <- "Question 6: First supervisor"},
+                     L.5 =   {text <- "Question 7: Second supervisor"},
+                     L.6 =   {text <- "Question 8: Personal development"},
+                     L.3.a = {text <- "Question 9: Field experience"},
+                     L.2.a = {text <- "Question 10: Internship experience"}
+              )
+              paste0(text)
+            })
+          
+          output[[paste0("plot", local_i)]] <- 
+            renderPlot({
+              questionprint(local_i, datasetInput())
+            }, height = figure_height(local_i, datasetInput()))
+          
+          output[[paste0("tablename", local_i)]] <-
+            renderDataTable(comparative_df(local_i, datasetInput(), dataset), 
+                            options = list(dom = 't', autoWidth = TRUE, searching = FALSE,
+                                           columnDefs = list(list(width = "190px", targets = c(0)))))
+        })
+      }
   })
   
   #http://stackoverflow.com/questions/34315485/linking-to-a-tab-or-panel-of-a-shiny-app
