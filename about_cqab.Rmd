@@ -7,14 +7,14 @@ output: html_document
 
 ### Course Quality Advisory Board
 
-<a href="http://www.em-a.eu/en/about-ema/advisory-boards/course-quality.html" target = "_blank"><img src="data/CQAB_large.png" width="30%" align="left" style="margin: 0px 20px" /></a> The Course Quality Advisory Board is an independent advisory body that operates on a voluntary basis as part of the Erasmus Mundus Student and Alumni Association. Its members have not and do not receive financial incentives  for their CQAB-related activities. CQAB Membership selection is made through a competitive recruitment process among EMA members. Internally, CQAB has three main separate structures:
+<a href="http://www.em-a.eu/en/about-ema/advisory-boards/course-quality.html" target = "_blank" onclick="ga('send', 'event', 'click', 'link', 'cqab', 1)"><img src="data/CQAB_large.png" width="30%" align="left" style="margin: 0px 20px"/></a> The Course Quality Advisory Board is an independent advisory body that operates on a voluntary basis as part of the Erasmus Mundus Student and Alumni Association. Its members have not and do not receive financial incentives  for their CQAB-related activities. CQAB Membership selection is made through a competitive recruitment process among EMA members. Internally, CQAB has three main separate structures:
 
-   1. Management of the e-mail account em.feedback@em-a.eu, that assists students with pressing quality issues;
+   1. Management of the e-mail account <a mailto="em.feedback@em-a.eu" onclick="ga('send', 'event', 'click', 'link', 'em.feedback', 1)">cqab.chair@em-a.eu</a>em.feedback@em-a.eu</a>, that assists students with pressing quality issues;
    2. **Survey Team**, tasked with conducting the CQSS survey;
    3. **Communication Team**, a newly created structure aimed at facilitating the promotion of CQAB activities.
  
 CQAB was created as a result of the concerns of EMA members about the quality of the student experience in an Erasmus Mundus course. Internally, CQAB has a variety of tools to capture student concerns and to interact with student representatives from various programmes; the CQSS survey represents its most comprehensive and systematic initiative focused on quality assurance. The inception and design of the CQSS survey is rooted in the complexity of the EMJMD student experience and driven by two distinct factors: (1) the perceived issues around quality across joint degree courses, and (2) the general underrepresentation of students in the systemic evaluation of the EMJMD programme.
 
-You can learn more about CQAB [here](http://www.em-a.eu/en/about-ema/advisory-boards/course-quality.html).
+You can learn more about CQAB <a href="http://www.em-a.eu/en/about-ema/advisory-boards/course-quality.html" target = "_blank" onclick="ga('send', 'event', 'click', 'link', 'cqab', 1)">here</a>.
 
-Please address all questions and remarks to Georgiana Mihut at cqab.chair@em-a.eu.
+Please address all questions and remarks to Georgiana Mihut at <a mailto="cqab.chair@em-a.eu" onclick="ga('send', 'event', 'click', 'link', 'cqab.chair', 1)">cqab.chair@em-a.eu</a>.

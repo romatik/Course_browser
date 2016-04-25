@@ -38,19 +38,18 @@ colnames(tenormore) <- c("Course", "Respondents")
 shinyUI(
   navbarPage(title = "Course Browser", id = "panels",
              footer = h6("Created by ", a(href = "https://ru.linkedin.com/in/mikhailbalyasin", target = "_blank",
-                          "Mikhail Balyasin"), "head of Quantitative team of CQAB of EMA |", 
-                         a(" github", href = "https://github.com/romatik/Course_browser", target = "_blank"), 
+                                          onclick="ga('send', 'event', 'click', 'link', 'linkedin', 1)",
+                                          "Mikhail Balyasin"), "head of Quantitative team of CQAB of EMA |", 
+                         a(" github", href = "https://github.com/romatik/Course_browser", target = "_blank",
+                           onclick="ga('send', 'event', 'click', 'link', 'github', 1)"), 
                          align = "center", id = "footer"),
              header = HTML('
                             <link rel="stylesheet" type="text/css" href="style.css">
                             <script type="text/javascript" src="busy.js"></script>
+                            <script type="text/javascript" src="ga.js"></script>
                            '),
              
   tabPanel("Home", value = "home",
-           fluidRow(div(class = "busy",  
-                    p("Please wait..."), 
-                    img(src="https://upload.wikimedia.org/wikipedia/commons/4/42/Loading.gif")
-           )),
            fluidRow(
              column(1),
              column(10,
@@ -99,6 +98,12 @@ shinyUI(
                              actionButton("go", "Submit", align = "center")
                              )
                     ),
+                    fluidRow(
+                      column(6, align = "center", ofset = 3, 
+                                 div(class = "busy",  
+                                 p("Please wait..."), 
+                                 img(src="https://upload.wikimedia.org/wikipedia/commons/4/42/Loading.gif"))
+                    )),
                     fluidRow(h2(textOutput("course_name"), align = "center"),
                              hr(),
                              p(class = "footnote", textOutput("disclaimer")),
@@ -202,8 +207,10 @@ shinyUI(
                     h3("Contact information"),
                     p("We are always happy to hear your feedback. If you have questions about anything you found on this page, first we recommend
                       checking out the FAQ, but if your issue is not answered there, feel free to send us an e-mail at ",
-                      a(href="mailto:cqab.char@em-a.eu", "cqab.char@em-a.eu"), "."),
+                      a(href="mailto:cqab.char@em-a.eu", "cqab.char@em-a.eu",
+                        onclick="ga('send', 'event', 'click', 'link', 'cqab.chair', 1)"), "."),
                     a(href = "http://www.em-a.eu/en/about-ema/advisory-boards/course-quality.html", 
+                      onclick="ga('send', 'event', 'click', 'link', 'cqab', 1)",
                       img(src = "CQAB_large.png", style="margin: 0px 20px", width = "50%"),
                       target = "_blank")
                     ),

@@ -13,6 +13,6 @@ Erasmus Mundus offers scholarships for students and academics from all over the 
 
 EMA was established in 2006 as an  initiative of the Directorate General for Education and Culture of the European Commission. The Association was driven by the Erasmus Mundus students from the very start and has developed into a dynamic and democratic organisation.
 
-You can learn more about EMA [here](http://em-a.eu/)!
+You can learn more about EMA <a href="http://em-a.eu/" target = "_blank" onclick="ga('send', 'event', 'click', 'link', 'ema', 1)">here</a>!
 
-<a href="http://em-a.eu/" target = "_blank"><img src="data/EMA_full.png" width="55%" align="center" style="margin: 0px 20px" /></a>
+<a href="http://em-a.eu/" target = "_blank" onclick="ga('send', 'event', 'click', 'link', 'ema', 1)"><img src="data/EMA_full.png" width="55%" align="center" style="margin: 0px 20px" /></a>

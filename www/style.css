@@ -11,7 +11,7 @@ html, body {
 font-family: 'Open Sans';
 position: relative;
 margin: 0;
-padding-bottom: 1rem;
+padding-bottom: 2rem;
 min-height: 100%;
 font-style: normal;
 font-weight: 400;
@@ -57,10 +57,10 @@ a:focus, a:hover{
   text-decoration: none;
 }
 div.busy { 
-position:absolute;
+position:relative;
 background:white;
 top: 80%;
-left: 41%;
+left: 50%;
 display:none;
 text-align: center;
 font-size:28px;

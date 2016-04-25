@@ -10,7 +10,7 @@
             </div>
             <div id="collapseFourteen" class="panel-collapse collapse in">
                 <div class="panel-body">
-                      <a href="https://eacea.ec.europa.eu/erasmus-plus/library/emjmd-catalogue_en" target = "_blank">EMJMDs</a>  or Erasmus Mundus Joint Master Degrees, are joint or dual master courses supported by the European Commission. Students of EMJMDs study in at least two different universities, in two different European countries.
+                      <a href="https://eacea.ec.europa.eu/erasmus-plus/library/emjmd-catalogue_en" target = "_blank" onclick="ga('send', 'event', 'click', 'link', 'emjmd', 1)">EMJMDs</a>  or Erasmus Mundus Joint Master Degrees, are joint or dual master courses supported by the European Commission. Students of EMJMDs study in at least two different universities, in two different European countries.
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
 </tr>
 <tr>
 <td>
-<p><span style="font-weight: 400;">Total number of students enrolled in an EMJMD and awarded an Erasmus Mundus scholarship (<a href="http://eacea.ec.europa.eu/erasmus_mundus/results_compendia/documents/statistics/cumulative/statistics_by_country_erasmus_mundus_masters_students_selected_each_academic_year,_2004-05_to_2013-14.pdf" target = "_blank">source</a>)</span></p>
+<p><span style="font-weight: 400;">Total number of students enrolled in an EMJMD and awarded an Erasmus Mundus scholarship (<a href="http://eacea.ec.europa.eu/erasmus_mundus/results_compendia/documents/statistics/cumulative/statistics_by_country_erasmus_mundus_masters_students_selected_each_academic_year,_2004-05_to_2013-14.pdf" target = "_blank" onclick="ga('send', 'event', 'click', 'link', 'source', 1)">source</a>)</span></p>
 </td>
 <td style="text-align: center;">
 <p><span style="font-weight: 400;">-</span></p>
@@ -244,7 +244,7 @@ Each EMJMD course coordinator of a course that received 10 or more CQSS response
             </div>
             <div id="collapseNine" class="panel-collapse collapse">
                 <div class="panel-body">
-We have published the methodology of the 2015 CQSS survey in the peer-reviewed journal <a href = "https://vo.hse.ru/en/2016--1/178804999.html" target = "_blank">Educational Studies Moscow</a>. We are currently working on further publications based on the results of the survey. All publications will be linked via this tool online. Stay tuned!
+We have published the methodology of the 2015 CQSS survey in the peer-reviewed journal <a href = "https://vo.hse.ru/en/2016--1/178804999.html" target = "_blank" onclick="ga('send', 'event', 'click', 'link', 'journal', 1)">Educational Studies Moscow</a>. We are currently working on further publications based on the results of the survey. All publications will be linked via this tool online. Stay tuned!
                 </div>
             </div>
         </div>
@@ -270,7 +270,7 @@ The next wave of the CQSS survey is scheduled to be launched at the beginning of
             </div>
             <div id="collapseEleven" class="panel-collapse collapse">
                 <div class="panel-body">
-CQAB members are selected through an open competition each year in November. Each CQAB member has a one year renewable mandate. In order be eligible, applicants need to be EMA members. However, if you think that you can help us in some way, do send an email highlighting your relevant experience to <a href="mailto:cqab.chair@em-a.eu">cqab.chair@em-a.eu</a>.
+CQAB members are selected through an open competition each year in November. Each CQAB member has a one year renewable mandate. In order be eligible, applicants need to be EMA members. However, if you think that you can help us in some way, do send an email highlighting your relevant experience to <a href="mailto:cqab.chair@em-a.eu" onclick="ga('send', 'event', 'click', 'link', 'mail', 1)">cqab.chair@em-a.eu</a>.
                 </div>
             </div>
         </div>
@@ -282,7 +282,7 @@ CQAB members are selected through an open competition each year in November. Eac
             </div>
             <div id="collapseTwelve" class="panel-collapse collapse">
                 <div class="panel-body">
-If you have found an error or something that you think we should change, please tell us at <a href="mailto:cqab.chair@em-a.eu">cqab.chair@em-a.eu</a>. Thank you in advance for the help!
+If you have found an error or something that you think we should change, please tell us at <a href="mailto:cqab.chair@em-a.eu" onclick="ga('send', 'event', 'click', 'link', 'mail', 1)">cqab.chair@em-a.eu</a>. Thank you in advance for the help!
                 </div>
             </div>
         </div>
@@ -294,7 +294,7 @@ If you have found an error or something that you think we should change, please 
             </div>
             <div id="collapseThirteen" class="panel-collapse collapse">
                 <div class="panel-body">
-You can send any information you think is relevant to <a href="mailto:cqab.chair@em-a.eu">cqab.chair@em-a.eu</a>. For individual cases of urgent quality concerns please use the following e-mail address <a href="mailto:em.feedback@em-a.eu">em.feedback@em-a.eu</a>.
+You can send any information you think is relevant to <a href="mailto:cqab.chair@em-a.eu" onclick="ga('send', 'event', 'click', 'link', 'mail', 1)">cqab.chair@em-a.eu</a>. For individual cases of urgent quality concerns please use the following e-mail address <a href="mailto:em.feedback@em-a.eu">em.feedback@em-a.eu</a>.
                 </div>
             </div>
         </div>
@@ -312,3 +312,4 @@ You can send any information you think is relevant to <a href="mailto:cqab.chair
     }
 
 </style>
+

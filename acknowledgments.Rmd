@@ -17,6 +17,6 @@ In the fall of 2015, CQAB conducted a new recruitment process to consolidate its
 
 **Muhammad Sohaib Aslam, Wei Wang, Wenjie Shi,** and **Yemi Adeyeye**, members of the newly formed CQAB Communication Team provided support on communication tasks, proofreading and more. **Grischa Fraumann** and **Catherine Lourdes Dy** also provided proofreading help.
 
-You can learn more about us [here](https://docs.google.com/document/d/1ipTxCHaPQhMLQRiSiFwKR2I9Wkxtv2XZGCkCHLk9eFg/edit?usp=sharing)!
+You can learn more about us <a href="https://docs.google.com/document/d/1ipTxCHaPQhMLQRiSiFwKR2I9Wkxtv2XZGCkCHLk9eFg/edit?usp=sharing" target = "_blank" onclick="ga('send', 'event', 'click', 'link', 'us', 1)">here</a>!
 
 CQAB is grateful for the ongoing support received from the **Erasmus Mundus Student and Alumni Association, and its leadership structures**. We are indebted to representatives of the **European Commission**, and **EMJMD course coordinators** whom we consider allies in a joint quest of improving the excellence brand of EMJMDs.
