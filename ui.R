@@ -18,6 +18,8 @@ dataset$B.2.2.a.If.you.feel.comfortable.describe.any.inappropriate.conduct.or.se
 dataset$L.2.a.Rate.the.following.statements.about.internship._Overall.quality.of.the.internship_2 <- NULL
 dataset$L.3.a.Rate.the.following.statements.about.field.experience._Overall.quality.of.field.experience_2 <- NULL
 
+response <- read.csv("./data/response.csv", header = TRUE)
+
 likert_levels <- c("Very unsatisfied", "Somewhat unsatisfied", "Somewhat satisfied", "Very satisfied")
 agree_levels <- c("Disagree", "Somewhat disagree", "Somewhat agree", "Agree")
 
@@ -95,7 +97,7 @@ shinyUI(
                     ),
                     fluidRow(
                       column(6, align = "center", offset = 3,
-                             actionButton("go", "Submit", align = "center")
+                             actionButton("go", "Submit", align = "center", onclick = 'showLink(1)')
                              )
                     ),
                     fluidRow(
@@ -109,6 +111,8 @@ shinyUI(
                              p(class = "footnote", textOutput("disclaimer")),
                              br(),
                              dataTableOutput("students"),
+                             p(textOutput("response_rate"), 
+                               actionLink("link_to_faq1","(How was the response rate for each course calculated?)")),
                              hr(),
                              uiOutput("course_plots"))
                     ),

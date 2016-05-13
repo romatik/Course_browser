@@ -51,7 +51,11 @@ table.dataTable thead > tr > th {
   padding-left: 8px;
   padding-right: 18px;                                      
 }
-
+/*
+table.dataTable tbody > tr > td:hover {
+  background-color: rgb(0, 78, 134);
+}
+*/
 /* removing underlining for all links on hover */
 a:focus, a:hover{
   text-decoration: none;

@@ -3,6 +3,9 @@ dataset$X <- NULL
 dataset$B.2.2.a.If.you.feel.comfortable.describe.any.inappropriate.conduct.or.sexual.harassment.issues.you.have.witnessed.or.have.been.the.subject.of.and.the.support.you.have.received.The.answers.to.this.question.will.not.be.shared.with.Erasmus.Mundus.course._Open.Ended.Response <- NULL
 dataset$L.3.a.Rate.the.following.statements.about.field.experience._Overall.quality.of.field.experience_2 <- NULL
 
+response_per_year <- read.csv("./data/students_cleaned.csv", header = TRUE, stringsAsFactors = FALSE)
+response <- read.csv("./data/response.csv", header = TRUE, stringsAsFactors = FALSE)
+
 questions <- c('B.1.1', 'B.1.3', 'B.2.1', 'B.2.2', 'C.1', #overall program satisfaction
                "L.4", "L.5", "L.6", 'L.3.a', 'L.2.a') #internship/field experience
 likert_levels <- c("Very unsatisfied", "Somewhat unsatisfied", "Somewhat satisfied", "Very satisfied")
@@ -36,7 +39,15 @@ shinyServer(function(input, output, session) {
     paste(input$course)
   })
   
-  output$students <- renderDataTable(table_course(datasetInput()), 
+  responseInput <- eventReactive(input$go, {
+    response[response$course == input$course,]
+  })
+  
+  responsePYInput <- eventReactive(input$go, {
+    response_per_year[response_per_year$course == input$course,]
+  })
+  
+  output$students <- renderDataTable(table_course(datasetInput(), responsePYInput()), 
                                      options = list(dom = 't', searching = FALSE,
                                                     columnDefs = list(list(width = "190px", targets = "_all")),
                                                     align = "center"
@@ -48,8 +59,16 @@ shinyServer(function(input, output, session) {
   
   output$disclaimer <- renderText({disclaimerInput()})
   
-  output$example <- renderDataTable(z, options = list(dom = 't', autoWidth = TRUE, searching = FALSE,
-                                                      columnDefs = list(list(width = "190px", targets = c(0)))))
+  output$response_rate <- renderText({
+    temp <- responseInput()
+    if(dim(temp)[1]==0)
+      sprintf("No response rate is calculated for course that have not completed at least one of the two surveys sent by CQAB.")
+    else
+      sprintf("Self-reported number of students enrolled in this program from the start is %s. Response rate based on that figure is %s. ",
+              temp$sum, temp$Response.rate)
+  })
+  
+  output$example <- renderDataTable(z, options = list(dom = 't', autoWidth = TRUE, searching = FALSE))
   
   output$course_plots <- renderUI({
     plot_output_list <- 
@@ -94,8 +113,7 @@ shinyServer(function(input, output, session) {
           
           output[[paste0("tablename", local_i)]] <-
             renderDataTable(comparative_df(local_i, datasetInput(), dataset), 
-                            options = list(dom = 't', autoWidth = TRUE, searching = FALSE,
-                                           columnDefs = list(list(width = "190px", targets = c(0)))))
+                            options = list(dom = 't', autoWidth = TRUE, searching = FALSE))
         })
       }
   })
@@ -151,5 +169,10 @@ shinyServer(function(input, output, session) {
     newvalue <- "faq"
     updateTabsetPanel(session, "panels", newvalue)
   })
+  observeEvent(input$link_to_faq1, {
+    newvalue <- "faq"
+    updateTabsetPanel(session, "panels", newvalue)
+  })
+  
 
 })

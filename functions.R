@@ -5,9 +5,20 @@ f1 <- function(x) if(sum(!is.na(x))>9) mean(as.numeric(x), na.rm=TRUE) else NA_r
 #function calculates number of respondents (not NA)
 f2 <- function(x) sum(!is.na(x))
 
-table_course <- function(dataset){
+table_course <- function(dataset, response){
   temp <- as.data.frame(table(dataset$A.5.When.did.you.start.EM.Course._Response))
-  names(temp) <- c("Year when respondent started the EMJMD", "Number of respondents to CQSS 2015")
+  
+  if(dim(response)[1] == 0){
+    names(temp) <- c("Year when respondent started the EMJMD", "Number of respondents to CQSS 2015")
+    return(temp)
+  }
+  temp2 <- as.data.frame(t(response))
+  temp2$year <- substr(row.names(temp2), 2, 6)
+  temp2 <- temp2[3:nrow(temp2), ]
+  
+  temp <- left_join(temp, temp2, by = c("Var1" = "year"))
+  
+  names(temp) <- c("Year when respondent started the EMJMD", "Number of respondents to CQSS 2015", "Self-reported number of students enrolled")
   return(temp)
 }
   
@@ -89,7 +100,7 @@ question_prepare <- function(x, dataset){
   
   ### checking to see to have 10 or more answers in each column, otherwise delete it
   question <- question[, colSums(!is.na(question)) >= 10]
-  output <- list(question, name_of_the_question)
+  output <- list(as.data.frame(question), name_of_the_question)
   return(output)
 }
 
@@ -138,7 +149,7 @@ comparative_df <- function(x, course_dataset, dataset){
   
   
   # checking to see if there is any data for that question
-  if(dim(question_dataset)[2] == 0)
+  if(dim(question_dataset)[2] < 2)
     return (as.data.frame("Not enough data were collected on this question"))
 
   #calculating means for a specific course

@@ -2,7 +2,7 @@
     <div class="panel-group" id="accordion">
     
         <div class="faqHeader">Questions about the CQSS survey and its results</div>
-            <div class="panel panel-default">
+        <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFourteen">What is EMJMD?</a>
@@ -138,6 +138,18 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFifteen">How was the response rate for each course calculated?</a>
+                </h4>
+            </div>
+            <div id="collapseFifteen" class="panel-collapse collapse">
+                <div class="panel-body">
+The response rate for each course is calculated using self-reported information from consortia. This information was obtained through a one of the two surveys described below. First, in June 2015 EMJMD consortia were invited to complete a survey asking them to report "How many students did you have enrolled from the start of the program?". Some, but not all course coordinators responded to this survey. Second, in May 2016 a new survey was sent to course coordinators asking them to specify both the total number of students in all cohorts up to the 2014 cohort (the last cohort eligible to complete the CQSS survey) and the number of students enrolled in each year of the program. Some but not all coordinators responded to this survey. In cases courses provided information as part of both surveys, the latest numbers are used.                
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
                     <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">What should the CQSS survey information be used for?</a>
                 </h4>
             </div>
@@ -184,8 +196,6 @@ The online tool displays information only for items for which 10 or more respons
                 </div>
             </div>
         </div>
-
-
 
         <div class="faqHeader">Methodology of the CQSS survey</div>
         <div class="panel panel-default">
