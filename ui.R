@@ -55,6 +55,13 @@ shinyUI(
            fluidRow(
              column(1),
              column(10,
+                    h4(strong("New wave of the CQSS survey")),
+                    p("CQAB is conducting a new wave of CQSS survey. 
+                      If you are a past or current student in EMJMD course, 
+                      we would appreciate if you follow the link to share your experiences: ",
+                      a(href = "https://www.surveymonkey.com/r/CQSS2016", 
+                        "https://www.surveymonkey.com/r/CQSS2016",
+                        onclick = "ga('send', 'event', 'click', 'link', 'surveymonkey', 1)")),
                     h3("Welcome to Course Browser"),
                     p(actionLink("link_to_ema", img(src = "EMA_large.png", align = "right", width = "30%")),
                       "an online tool that represents the data that the ", 
@@ -101,7 +108,7 @@ shinyUI(
                              )
                     ),
                     fluidRow(
-                      column(6, align = "center", ofset = 3, 
+                      column(6, align = "center", offset = 3, 
                                  div(class = "busy",  
                                  p("Please wait..."), 
                                  img(src="https://upload.wikimedia.org/wikipedia/commons/4/42/Loading.gif"))
@@ -211,7 +218,7 @@ shinyUI(
                     h3("Contact information"),
                     p("We are always happy to hear your feedback. If you have questions about anything you found on this page, first we recommend
                       checking out the FAQ, but if your issue is not answered there, feel free to send us an e-mail at ",
-                      a(href="mailto:cqab.char@em-a.eu", "cqab.char@em-a.eu",
+                      a(href="mailto:cqab.chair@em-a.eu", "cqab.chair@em-a.eu",
                         onclick="ga('send', 'event', 'click', 'link', 'cqab.chair', 1)"), "."),
                     a(href = "http://www.em-a.eu/en/about-ema/advisory-boards/course-quality.html", 
                       onclick="ga('send', 'event', 'click', 'link', 'cqab', 1)",

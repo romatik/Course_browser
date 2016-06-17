@@ -63,15 +63,13 @@ a:focus, a:hover{
 div.busy { 
 position:relative;
 background:white;
-top: 80%;
-left: 50%;
 display:none;
 text-align: center;
 font-size:28px;
 vertical-align: middle; 
-border-radius: 5px;
 height: 100px;
 width: 300px;
+margin: auto;
 }
 
 
