@@ -55,13 +55,6 @@ shinyUI(
            fluidRow(
              column(1),
              column(10,
-                    h4(strong("New wave of the CQSS survey")),
-                    p("CQAB is conducting a new wave of CQSS survey. 
-                      If you are a past or current student in EMJMD course, 
-                      we would appreciate if you follow the link to share your experiences: ",
-                      a(href = "https://www.surveymonkey.com/r/CQSS2016", 
-                        "https://www.surveymonkey.com/r/CQSS2016",
-                        onclick = "ga('send', 'event', 'click', 'link', 'surveymonkey', 1)")),
                     h3("Welcome to Course Browser"),
                     p(actionLink("link_to_ema", img(src = "EMA_large.png", align = "right", width = "30%")),
                       "an online tool that represents the data that the ", 
